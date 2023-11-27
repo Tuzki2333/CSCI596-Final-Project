@@ -20,7 +20,7 @@ The knapsack problem
 
 $$ \max_{x_1,x_2\cdots,x_n} \sum^{n}_{i=1} x_i v_i$$
 
-$$ s.t. \sum^{n}_{i=1} x_i w_i \leq W $$
+$$ s.t.\ \sum^{n}_{i=1} x_i w_i \leq W $$
 
 $$ x_i = 0\ or\ 1, i = 1,2,\cdots,n $$
 
@@ -43,7 +43,7 @@ To develop a desired algorithm, we formulate the Lagrangian dual problem as foll
 
 $$ \min_{\lambda \geq 0} \sup_{x_1,x_2\cdots,x_n} \sum_{i=1}^n x_i (v_i - \lambda w_i)$$
 
-$$ s.t. x_i = 0\ or\ 1, i = 1,2,\cdots,n $$
+$$ s.t.\ x_i = 0\ or\ 1, i = 1,2,\cdots,n $$
 
 Interestingly, this Lagrangian dual problem has a separable structure, which allows us to develop our desired algorithm. 
 
