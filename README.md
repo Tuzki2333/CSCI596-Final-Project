@@ -39,5 +39,19 @@ When $n$ is very large, the aboved algorithms result in long running times and s
 
 ## Methods
 
+To develop a desired algorthm, we formulate the Lagrangian dual problem as follows:
+
+$$ \min_{\lambda \geq 0} \sup_{x_1,x_2\cdots,x_n} \sum_{i=1}^n x_i (v_i - \lambda w_i)$$
+
+$$ s.t. x_i \in \{ 0,1 \}, i = 1,2,\cdots,n $$
+
+Interestingly, this Lagrangian dual problem has a seperable structure, which allows us to develop our desired algorithm. 
+
+So the high-level idea of our algorithm is:
+
+- STEP 1: Initialize a value of $\lambda$
+- STEP 2: Given $\lambda$, solve the inner maximization problem which can be done **in parallel** and in $O(n)$
+- STEP 3: Update the value of $\lambda$ according to dual ascent method
+- Repeat STEP 2 and STEP 3 until converge
 
 ## Expected Results
