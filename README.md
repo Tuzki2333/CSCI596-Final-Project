@@ -8,9 +8,9 @@ The knapsack problem is a well-known problem described as follows:
 
 **Output**: a subset of items. Denote $x_i = 1$ if the $i$-th item is chosen; otherwise, $x_i = 0$.
 
-**Constraint**: the total weight of chosen items is less than or equal to the space limit, that is, $\sum^{n}_{i=1} x_i w_i \leq W$.
+**Constraint**: the total weight of chosen items is less than or equal to the space limit, that is, $\sum_{i} x_i w_i \leq W$.
 
-**Objective**: maximize the total value of chosen items, that is, maximize $\sum^{n}_{i=1} x_i v_i$.
+**Objective**: maximize the total value of chosen items, that is, maximize $\sum_{i} x_i v_i$.
 
 In this project, I plan to solve the large-scale knapsack problem. That is, $n$ is very large.
 
