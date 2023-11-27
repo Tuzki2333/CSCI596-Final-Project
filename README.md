@@ -17,9 +17,13 @@ In this project, I plan to solve the very-large-scale knapsack problem. That is,
 ## Challenges
 
 The knapsack problem 
+
 $$ \max_{x_1,x_2\cdots,x_n} \sum_{i=1}^n x_i v_i$$
+
 $$ s.t. \sum_{i=1}^n x_i w_i \leq W $$
+
 $$ x_i \in \{ 0,1 \}, i = 1,2,\cdots,n $$
+
 is known as NP-hard. Some existing algorithms include:
 
 * Dynamic programming - Exact algorithm, pesudo-polynomial time $O(nW)$
@@ -27,6 +31,11 @@ is known as NP-hard. Some existing algorithms include:
 * Branch-and-bound - Exact algorithm, exponential time $O(2^n)$
 
 * Greedy algorithm - Approximate algorithm, require sorting, $O(n \log n)$
+
+When $n$ is very large, the aboved algorithms result in long running times and some new algorithms need to be developed. A desried algorithm should satisfy:
+
+- The time complexity is $O(n)$
+- The algorithm can be run in parallel
 
 ## Methods
 
