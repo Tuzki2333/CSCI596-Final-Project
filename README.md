@@ -41,7 +41,7 @@ When $n$ is very large, the above algorithms result in long running times and so
 
 To develop a desired algorithm, we formulate the Lagrangian dual problem as follows:
 
-$$ \min_{\lambda \geq 0} \sup_{x_1,x_2\cdots,x_n} \sum_{i=1}^n x_i (v_i - \lambda w_i)$$
+$$ \min_{\lambda \geq 0} \sup_{x_1,x_2\cdots,x_n} \sum_{i=1}^n x_i (v_i - \lambda w_i) + \lambda W$$
 
 $$ s.t.\ x_i = 0\ or\ 1, i = 1,2,\cdots,n $$
 
