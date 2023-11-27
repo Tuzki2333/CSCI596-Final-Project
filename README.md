@@ -2,6 +2,8 @@
 
 ## Problem Description
 
+![image](https://github.com/Tuzki2333/CSCI596-Final-Project/assets/66580690/d79802f6-dc4d-4afb-a150-4f8952d65df8)
+
 The knapsack problem is a well-known problem described as follows:
 
 **Input**: a set of $n$ items with weights $w_1, w_2, \cdots, w_n$ and values $v_1, v_2, \cdots, v_n$; the space limit $W$
