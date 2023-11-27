@@ -55,3 +55,7 @@ So the high-level idea of our algorithm is:
 - Repeat STEP 2 and STEP 3 until converge
 
 ## Expected Results
+
+- Implement the Lagrangian-dual algorithm using various parallel computing techniques, including MPI and OpenMP
+- Compare the timing results among different parallel computing techniques
+- Show the advantage of the parallel Lagrangian-dual algorithm over the greedy algorithm, in terms of running time
