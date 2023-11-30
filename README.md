@@ -2,7 +2,7 @@
 
 ## Problem Description
 
-![image](https://github.com/Tuzki2333/CSCI596-Final-Project/assets/66580690/d79802f6-dc4d-4afb-a150-4f8952d65df8)
+![image](https://github.com/Tuzki2333/CSCI596-Final-Project/assets/66580690/c3ae05f3-095f-437d-80d1-d556ed6bca06)
 
 The knapsack problem is a well-known problem described as follows:
 
