@@ -8,11 +8,11 @@ The knapsack problem is a well-known problem described as follows:
 
 **Input**: a set of $n$ items with weights $w_1, w_2, \cdots, w_n$ and values $v_1, v_2, \cdots, v_n$; the space limit $W$
 
-**Output**: a subset of items. Denote $x_i = 1$ if the $i$-th item is chosen; otherwise, $x_i = 0$.
+**Output**: a subset of items. Denote $x_j = 1$ if the $j$-th item is chosen; otherwise, $x_j = 0$.
 
-**Constraint**: the total weight of chosen items is less than or equal to the space limit, that is, $\sum_{i} x_i w_i \leq W$.
+**Constraint**: the total weight of chosen items is less than or equal to the space limit, that is, $\sum_{j} x_j w_j \leq W$.
 
-**Objective**: maximize the total value of chosen items, that is, maximize $\sum_{i} x_i v_i$.
+**Objective**: maximize the total value of chosen items, that is, maximize $\sum_{j} x_j v_j$.
 
 In this project, I plan to solve the large-scale knapsack problem. That is, $n$ is very large.
 
@@ -20,11 +20,7 @@ In this project, I plan to solve the large-scale knapsack problem. That is, $n$ 
 
 The knapsack problem 
 
-$$ \max_{x_1,x_2\cdots,x_n} \sum^{n}_{i=1} x_i v_i$$
-
-$$ s.t.\ \sum^{n}_{i=1} x_i w_i \leq W $$
-
-$$ x_i = 0\ or\ 1, i = 1,2,\cdots,n $$
+<img src="./imgs/Original_formulation.png" width="300">
 
 is known as NP-hard. Some existing algorithms include:
 
@@ -43,9 +39,11 @@ When $n$ is very large, the above algorithms result in long running times and so
 
 To develop a desired algorithm, we formulate the Lagrangian dual problem as follows:
 
-$$ \min_{\lambda \geq 0} \sup_{x_1,x_2\cdots,x_n} \sum_{i=1}^n x_i (v_i - \lambda w_i) + \lambda W$$
+<img src="./imgs/Dual_formulation_1.png" width="400">
 
-$$ s.t.\ x_i = 0\ or\ 1, i = 1,2,\cdots,n $$
+Or
+
+<img src="./imgs/Dual_formulation_2.png" width="500">
 
 Interestingly, this Lagrangian dual problem has a separable structure, which allows us to develop our desired algorithm. 
 
@@ -56,8 +54,23 @@ So the high-level idea of our algorithm is:
 - STEP 3: Update the value of $\lambda$ according to the dual ascent method
 - Repeat STEP 2 and STEP 3 until converge
 
+<img src="./imgs/Algorithm.png" width="600">
+
+## Extensions
+
+The original knapsack problem can be generalized into many variants. For example, the Multiple-Choice Knapsack Problem (MCKP), where items are categorized into $k$ different classes and only one item can be chose for each class:
+
+<img src="./imgs/Extension_1.png" width="400">
+
+And the Multi-Dimensional Knapsack Problem (MDKP), where there is more than one constraint:
+
+<img src="./imgs/Extension_2.png" width="400">
+
+For these variants, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual algorithm can be still applied and parallel computing is still possible!
+
 ## Expected Results
 
 - Implement the Lagrangian-dual algorithm using various parallel computing techniques, including MPI and OpenMP
 - Compare the timing results among different parallel computing techniques
 - Show the advantage of the parallel Lagrangian-dual algorithm over the greedy algorithm, in terms of running time
+- Solve the extensions of the knapsack problem, like MCKPs and MDKPs.
