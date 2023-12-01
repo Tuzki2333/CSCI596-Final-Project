@@ -20,7 +20,7 @@ In this project, I plan to solve the large-scale knapsack problem. That is, $n$ 
 
 The knapsack problem 
 
-<img src="./imgs/Original_formulation.png" width="300">
+<img src="./imgs/Original_formulation.png" width="350">
 
 is known as NP-hard. Some existing algorithms include:
 
@@ -43,7 +43,7 @@ To develop a desired algorithm, we formulate the Lagrangian dual problem as foll
 
 Or
 
-<img src="./imgs/Dual_formulation_2.png" width="500">
+<img src="./imgs/Dual_formulation_2.png" width="450">
 
 Interestingly, this Lagrangian dual problem has a separable structure, which allows us to develop our desired algorithm. 
 
@@ -58,13 +58,13 @@ So the high-level idea of our algorithm is:
 
 ## Extensions
 
-The original knapsack problem can be generalized into many variants. For example, the Multiple-Choice Knapsack Problem (MCKP), where items are categorized into $k$ different classes and only one item can be chose for each class:
+The original knapsack problem can be generalized into many variants. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chose for each class:
 
 <img src="./imgs/Extension_1.png" width="400">
 
-And the Multi-Dimensional Knapsack Problem (MDKP), where there is more than one constraint:
+And the **Multi-Dimensional Knapsack Problem (MDKP)**, where there is more than one constraint:
 
-<img src="./imgs/Extension_2.png" width="400">
+<img src="./imgs/Extension_2.png" width="350">
 
 For these variants, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual algorithm can be still applied and parallel computing is still possible!
 
