@@ -8,15 +8,10 @@
 
 int main(int argc, char *argv[]) {
 
-    FILE *fp;
     unsigned long n, w; /* n denotes the number of items and w denotes the space limit */
 
-    fp = fopen("inputs/knapsackInstance-n-100000-W-10000-seed-5.txt", "r");
-    fscanf(fp, "%lu", &n);
-    fscanf(fp, "%lu", &w);
-
-    printf("The number of items: %lu\n", n);
-    printf("The space limit: %lu\n", w);
+    n = atoll(argv[1]);
+    w = n/10;
 
     double *v_list; /* the values of items */
     double *w_list; /* the weights of items */
@@ -24,9 +19,12 @@ int main(int argc, char *argv[]) {
     v_list = (double*)malloc(n*sizeof(double));
     w_list = (double*)malloc(n*sizeof(double));
 
+    unsigned int seed = atoi(argv[2]);
+
+    srand(seed);
     for (unsigned long i=0; i<n; i++){
-        fscanf(fp, "%lf", &v_list[i]);
-        fscanf(fp, "%lf", &w_list[i]);
+        v_list[i] = (double)(rand() % 100 + 1)/100;
+        w_list[i] = (double)(rand() % 100 + 1)/100;
     }
 
     /*
@@ -34,8 +32,6 @@ int main(int argc, char *argv[]) {
         printf("%lf %lf\n", v_list[i], w_list[i]);
     }
     */
-
-    fclose(fp);
 
     double cpu1 = ((double) clock())/CLOCKS_PER_SEC;
 
@@ -47,15 +43,12 @@ int main(int argc, char *argv[]) {
     for (unsigned long t=1; t<=MAX_ITER; t++){
 
         double current_w = 0;
-        double current_v = 0;
         for (unsigned long i=0; i<n; i++){
             if (v_list[i] - lambda*w_list[i] > 0){
                 current_w += w_list[i];
-                current_v += v_list[i];
             }
         }
 
-        printf("%d %lf %lf %lf %lf \n", t, lambda, alpha, current_w, current_v);
         if (abs(current_w-w) <= EPSILON*w){
             break;
         }
@@ -72,11 +65,10 @@ int main(int argc, char *argv[]) {
     }
 
     /* obtain final results */
-
     double final_w = 0;
     double final_v = 0;
 
-    for (int i=0; i<n; i++){
+    for (unsigned long i=0; i<n; i++){
         if ((v_list[i] - lambda*w_list[i] > 0)&&(final_w + w_list[i] <= w)){
             final_w += w_list[i];
             final_v += v_list[i];
@@ -87,8 +79,10 @@ int main(int argc, char *argv[]) {
 
     double cpu = cpu2 - cpu1;
 
+    printf("The number of items: %lu\n", n);
+    printf("The space limit: %lu\n", w);
     printf("Final space used: %lf\n", final_w);
     printf("Total values obtained: %lf\n", final_v);
-    printf("Execution time (s): %lf\n", cpu);
+    printf("Execution time (s): %lf\n\n", cpu);
 
 }
