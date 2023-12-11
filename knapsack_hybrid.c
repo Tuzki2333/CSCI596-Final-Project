@@ -2,10 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include "mpi.h"
+#include "omp.h"
 
 #define MAX_ITER 100
 #define EPSILON 0.0001
 #define INITIAL_ALPHA 0.0001
+#define MAX_THREADS 4
+
+int nthreads;
+int tid;
 
 int nprocs;  /* Number of processes */
 int myid;    /* My rank */
@@ -35,6 +40,8 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &myid);
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
 
+    omp_set_num_threads(2);
+    
     double cpu1 =  ((double) clock())/CLOCKS_PER_SEC;
     
     /* initialize lambda as 0 */
@@ -47,14 +54,25 @@ int main(int argc, char *argv[]) {
         MPI_Bcast(&lambda, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
         double current_w = 0;
-        double local_w = 0;
-        for (unsigned long i=myid; i < n; i+=nprocs){
-            if (v_list[i] - lambda*w_list[i] > 0){
-                local_w += w_list[i];
+        double local_w_sum = 0;
+        double local_w[MAX_THREADS] = {0.0};
+        
+        #pragma omp parallel private(tid)
+        {
+            nthreads = omp_get_num_threads();
+            tid = omp_get_thread_num();
+            for (unsigned long i=myid*nthreads+tid; i < n; i+=(nprocs*nthreads)){
+                if (v_list[i] - lambda*w_list[i] > 0){
+                    local_w[tid] += w_list[i];
+                }
             }
         }
-
-        MPI_Reduce(&local_w, &current_w, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+        
+        for(tid = 0; tid < nthreads; tid++){
+            local_w_sum += local_w[tid];
+        }
+        
+        MPI_Reduce(&local_w_sum, &current_w, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
         if (myid == 0){
             if (abs(current_w-w) <= EPSILON*w){
@@ -92,6 +110,7 @@ int main(int argc, char *argv[]) {
         double cpu = cpu2 - cpu1;
 
         printf("The number of processes: %d\n", nprocs);
+        printf("The number of threads: %d\n", nthreads);
         printf("The number of items: %lu\n", n);
         printf("The space limit: %lu\n", w);
         printf("Final space used: %lf\n", final_w);
