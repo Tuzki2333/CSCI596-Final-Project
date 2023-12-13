@@ -1,0 +1,152 @@
+==========================================
+SLURM_JOB_ID = 18135966
+SLURM_JOB_NODELIST = d17-23
+TMPDIR = /tmp/SLURM_18135966
+==========================================
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 0.730000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 100130.480000
+Execution time (s): 0.000000
+
+The space limit: 100000
+Final space used: 99999.990000
+Total values obtained: 257768.780000
+Execution time (s): 0.760000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257121.560000
+Execution time (s): 0.720000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99999.990000
+Total values obtained: 100159.700000
+Execution time (s): 0.010000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99999.990000
+Total values obtained: 257322.880000
+Execution time (s): 0.760000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 0.720000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 99823.430000
+Execution time (s): 0.000000
+
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99999.990000
+Total values obtained: 257405.700000
+Execution time (s): 0.760000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 5.680000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990000
+Total values obtained: 1000298.990000
+Execution time (s): 0.030000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 1000000.000000
+Total values obtained: 2576290.309998
+Execution time (s): 69.560000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 6.620000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 1000000.000000
+Total values obtained: 999708.550000
+Execution time (s): 0.030000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 1000000.000000
+Total values obtained: 2576174.009998
+Execution time (s): 70.470000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 6.640000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 1000000.000000
+Total values obtained: 998919.300000
+Execution time (s): 0.030000
+
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 1000000.000000
+Total values obtained: 2576815.219998
+Execution time (s): 70.250000
+
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 46.390000
+
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9999999.990000
+Total values obtained: 10001563.300000
+Execution time (s): 0.490000
+
+/var/spool/slurm/d/job18135966/slurm_script: line 28: 25057 Killed                  ./knapsack_greedy_sorting 100000000 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 46.250000
+
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9999999.999999
+Total values obtained: 9999528.980000
+Execution time (s): 0.490000
+
+/var/spool/slurm/d/job18135966/slurm_script: line 31: 25096 Killed                  ./knapsack_greedy_sorting 100000000 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 46.470000
+
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9999999.990001
+Total values obtained: 9997677.910002
+Execution time (s): 0.500000
+
+/var/spool/slurm/d/job18135966/slurm_script: line 34: 25101 Killed                  ./knapsack_greedy_sorting 100000000 3
+slurmstepd: error: Detected 3 oom-kill event(s) in StepId=18135966.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

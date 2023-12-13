@@ -1,0 +1,194 @@
+==========================================
+SLURM_JOB_ID = 18135968
+SLURM_JOB_NODELIST = d05-32
+TMPDIR = /tmp/SLURM_18135968
+==========================================
+The number of threads: 1
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 0.900000
+
+The number of threads: 2
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 1.310000
+
+The number of threads: 4
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 1.890000
+
+The number of threads: 1
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257121.560000
+Execution time (s): 0.820000
+
+The number of threads: 2
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99862.000000
+Total values obtained: 257143.500000
+Execution time (s): 1.050000
+
+The number of threads: 4
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99862.000000
+Total values obtained: 257143.500000
+Execution time (s): 1.970000
+
+The number of threads: 1
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 0.840000
+
+The number of threads: 2
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 1.050000
+
+The number of threads: 4
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 2.150000
+
+The number of threads: 1
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 6.470000
+
+The number of threads: 2
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 10.380000
+
+The number of threads: 4
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 21.570000
+
+The number of threads: 1
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 6.450000
+
+The number of threads: 2
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 11.110000
+
+The number of threads: 4
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 11.550000
+
+The number of threads: 1
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 7.140000
+
+The number of threads: 2
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 10.270000
+
+The number of threads: 4
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 16.670000
+
+The number of threads: 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 50.140000
+
+The number of threads: 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 70.560000
+
+The number of threads: 4
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 101.220000
+
+The number of threads: 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 50.100000
+
+The number of threads: 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 71.140000
+
+The number of threads: 4
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 101.530000
+
+The number of threads: 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 50.020000
+
+The number of threads: 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 70.200000
+
+The number of threads: 4
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 148.690000
+
