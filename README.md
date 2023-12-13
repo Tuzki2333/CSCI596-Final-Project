@@ -64,23 +64,42 @@ From the pseudo-code, we can see that Lines 7 to 11 can be done in parallel, so 
 ## Implementation and Experiment Results
 
 In the experiment section, we have the following settings:
-- The number of items $n = 1,000,000, 10,000,000$ or $100,000,000$;
-- The weight and value of each item are randomly generated, taking values between 0 and 1;
+- We try three different number of items, 1 million, 10 million, and 100 million;
+- The weight and value of each item are randomly generated, taking values between 0 and 1. We try 3 different random seeds and report the average results of 3 repeated experiments;
 - The space limit $W = 0.1n$;
-- For each part of experiment, we try 3 different random seeds and report the average results of 3 repeated experiments.
+- For Lagrangian-dual-based algorithm, we set $\alpha = \varepsilon = 0.0001$, and $T = 100$.
 
 ### Comparison of Greedy Algorithms and Our Algorithm
 
-Firstly, we compare the greedy algorithm (with/without sorting) and our Lagrangian-dual algorithm. Here the Lagrangian-dual algorithm has not been parallelized yet.
+Firstly, we compare the greedy algorithm (with/without sorting) and our Lagrangian-dual-based algorithm. Here the Lagrangian-dual-based algorithm has not been parallelized yet.
+
+The codes are implemented in `knapsack_greedy_sorting.c`, `knapsack_greedy_nonsorting.c`, and `knapsack_lagrangian.c`. And `knapsack_baseline.sl` is the batch file that can reproduce our results.
+
+The following table shows the total values obtained by different algorithms. Results show that the greedy algorithm without sorting cannot produce good solution, and our algorithm produces similar solution with the greedy algorithm with sorting process.
+
+|                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
+|-----------------|--------------------------|-----------------------|-----------------------|
+| n = 1,000,000   | 100037.87 ± 186.28       | 257499.12 ± 237.18    | 257363.51 ± 313.46    |
+| n = 10,000,000  | 999642.28 ± 692.23       | 2576426.51 ± 341.62   | 2575599.66 ± 572.32   |
+| n = 100,000,000 | 9999590.06 ± 1943.42     | Memory exceeded       | 25755056.01 ± 1656.31 |
+
+The following table shows the running times of different algorithms. The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. Our algorithm can be run in reasonable time.
+
+|                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
+|-----------------|--------------------------|-----------------------|-----------------------|
+| n = 1,000,000   | 0.003 ± 0.006            | 0.760 ± 0             | 0.723 ± 0.006         |
+| n = 10,000,000  | 0.030 ± 0                | 70.093 ± 0.475        | 6.313 ± 0.549         |
+| n = 100,000,000 | 0.493 ± 0.006            | Memory exceeded       | 46.370 ± 0.111        |
+
+In summary, we have shown the advantage of our Lagrangian-dual-based algorithm, compared to the baseline greedy algorithms.
 
 ### Parallel Algorithm via MPI
 
-For this part
-
+For this part, we parallelize our Lagrangian-dual-based using MPI programming. The codes are implemented in `knapsack_mpi.c`. And `knapsack_mpi.sl` is the batch file that can reproduce our results.
 
 ## Extensions
 
-For the following variants, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual algorithm can be still applied and parallel computing is still possible.
+For the following variants, simple algorithms like the greedily algorithm might not work, but our Lagrangian-dual-based algorithm can be still applied and parallel computing is still possible.
 
 ### Multiple-Choice Knapsack Problem (MCKP)
  
