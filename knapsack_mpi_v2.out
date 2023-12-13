@@ -1,0 +1,257 @@
+==========================================
+SLURM_JOB_ID = 18138322
+SLURM_JOB_NODELIST = e06-[16-17]
+TMPDIR = /tmp/SLURM_18138322
+==========================================
+The number of processes: 1
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 0.880000
+
+The number of processes: 2
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 0.480000
+
+The number of processes: 4
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 0.300000
+
+The number of processes: 8
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257717.620000
+Execution time (s): 0.360000
+
+The number of processes: 1
+The number of items: 1000000
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 257121.560000
+Execution time (s): 0.890000
+
+The number of processes: 2
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99862.000000
+Total values obtained: 257143.500000
+Execution time (s): 0.480000
+
+The number of processes: 4
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99862.000000
+Total values obtained: 257143.500000
+Execution time (s): 0.300000
+
+The number of processes: 8
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99862.000000
+Total values obtained: 257143.500000
+Execution time (s): 0.340000
+
+The number of processes: 1
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 0.890000
+
+The number of processes: 2
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 0.480000
+
+The number of processes: 4
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 0.300000
+
+The number of processes: 8
+The number of items: 1000000
+The space limit: 100000
+Final space used: 99881.250000
+Total values obtained: 257251.340000
+Execution time (s): 0.340000
+
+The number of processes: 1
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 6.770000
+
+The number of processes: 2
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 3.720000
+
+The number of processes: 4
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 2.600000
+
+The number of processes: 8
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999045.140004
+Total values obtained: 2575048.999998
+Execution time (s): 2.200000
+
+The number of processes: 1
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 6.790000
+
+The number of processes: 2
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 3.710000
+
+The number of processes: 4
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 2.580000
+
+The number of processes: 8
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999999.990004
+Total values obtained: 2575558.549998
+Execution time (s): 2.230000
+
+The number of processes: 1
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 6.800000
+
+The number of processes: 2
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 3.720000
+
+The number of processes: 4
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 2.590000
+
+The number of processes: 8
+The number of items: 10000000
+The space limit: 1000000
+Final space used: 999520.160004
+Total values obtained: 2576191.429998
+Execution time (s): 2.250000
+
+The number of processes: 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 47.860000
+
+The number of processes: 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 29.250000
+
+The number of processes: 4
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 24.460000
+
+The number of processes: 8
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9993867.369520
+Total values obtained: 25753381.890120
+Execution time (s): 22.470000
+
+The number of processes: 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 44.380000
+
+The number of processes: 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 29.260000
+
+The number of processes: 4
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 23.800000
+
+The number of processes: 8
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9997691.059521
+Total values obtained: 25756693.910122
+Execution time (s): 22.310000
+
+The number of processes: 1
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 47.750000
+
+The number of processes: 2
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 30.050000
+
+The number of processes: 4
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 24.330000
+
+The number of processes: 8
+The number of items: 100000000
+The space limit: 10000000
+Final space used: 9995968.539523
+Total values obtained: 25755092.220119
+Execution time (s): 22.400000
+
