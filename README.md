@@ -47,7 +47,7 @@ Or
 
 <img src="./imgs/Dual_formulation_2.png" width="450">
 
-Interestingly, this Lagrangian dual problem has a separable structure, which allows us to develop our desired algorithm. The high-level idea of our algorithm is:
+Interestingly, this Lagrangian dual problem has a separable structure, which allows me to develop the desired algorithm. The high-level idea of my algorithm is:
 
 - STEP 1: Initialize a value of $\lambda$
 - STEP 2: Given $\lambda$, solve the inner maximization problem which can be done in $O(n)$
@@ -69,13 +69,13 @@ In the experiment section, I have the following settings:
 - The space limit $W = 0.1n$;
 - For Lagrangian-dual-based algorithm, I set $\alpha = \varepsilon = 0.0001$, and $T = 100$.
 
-### Comparison of Greedy Algorithms and Our Algorithm
+### Comparison of Greedy Algorithms and Lagrangian-Dual-Based Algorithm
 
-Firstly, I compare the greedy algorithm (with/without sorting) and our Lagrangian-dual-based algorithm. Here the Lagrangian-dual-based algorithm has not been parallelized yet.
+Firstly, I compare the greedy algorithm (with/without sorting) and my Lagrangian-dual-based algorithm. Here the Lagrangian-dual-based algorithm has not been parallelized yet.
 
-The codes are implemented in `knapsack_greedy_sorting.c`, `knapsack_greedy_nonsorting.c`, and `knapsack_lagrangian.c`. And `knapsack_baseline.sl` is the batch file that can reproduce our results (`results/knapsack_baseline.out`).
+The codes are implemented in `knapsack_greedy_sorting.c`, `knapsack_greedy_nonsorting.c`, and `knapsack_lagrangian.c`. And `knapsack_baseline.sl` is the batch file that can reproduce my results (`results/knapsack_baseline.out`).
 
-The following table shows the total values obtained by different algorithms. Results show that the greedy algorithm without sorting cannot produce a good solution, and our algorithm produces a similar solution to the greedy algorithm with the sorting process.
+The following table shows the total values obtained by different algorithms. Results show that the greedy algorithm without sorting cannot produce a good solution, and my algorithm produces a similar solution to the greedy algorithm with the sorting process.
 
 |                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
 |-----------------|--------------------------|-----------------------|-----------------------|
@@ -83,7 +83,7 @@ The following table shows the total values obtained by different algorithms. Res
 | n = 10,000,000  | 999642.28 ± 692.23       | 2576426.51 ± 341.62   | 2575599.66 ± 572.32   |
 | n = 100,000,000 | 9999590.06 ± 1943.42     | Memory exceeded       | 25755056.01 ± 1656.31 |
 
-The following table shows the running times of different algorithms (in seconds). The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. Our algorithm can be run in a reasonable time.
+The following table shows the running times of different algorithms (in seconds). The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. My algorithm can be run in a reasonable time.
 
 |                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
 |-----------------|--------------------------|-----------------------|-----------------------|
@@ -91,13 +91,13 @@ The following table shows the running times of different algorithms (in seconds)
 | n = 10,000,000  | 0.030 ± 0                | 70.093 ± 0.475        | 6.313 ± 0.549         |
 | n = 100,000,000 | 0.493 ± 0.006            | Memory exceeded       | 46.370 ± 0.111        |
 
-In summary, I have shown the advantage of our Lagrangian-dual-based algorithm, compared to the baseline greedy algorithms.
+In summary, I have shown the advantage of my Lagrangian-dual-based algorithm, compared to the baseline greedy algorithms.
 
 ### Parallel Algorithm via MPI
 
-For this part, I parallelize our Lagrangian-dual-based using MPI programming. The codes are implemented in `knapsack_mpi.c`. And `knapsack_mpi.sl` is the batch file that can reproduce our results. When submitting our batch job, I let the number of nodes be 2, and let the number of tasks per node be 4.
+For this part, I parallelize my Lagrangian-dual-based using MPI programming. The codes are implemented in `knapsack_mpi.c`. And `knapsack_mpi.sl` is the batch file that can reproduce my results. When submitting the batch job, I let the number of nodes be 2, and let the number of tasks per node be 4.
 
-The following table shows the running times (in seconds) of our Lagrangian-dual-based algorithm via MPI, under a different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
+The following table shows the running times (in seconds) of my Lagrangian-dual-based algorithm via MPI, under a different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize the algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
 
 |                 | Num. Processes = 1 | Num. Processes = 2 | Num. Processes = 4 | Num. Processes = 8 |
 |-----------------|--------------------|--------------------|--------------------|--------------------|
@@ -124,7 +124,7 @@ When I submitted the batch job again, two adjacent nodes were allocated this tim
 
 ## Extensions
 
-For the variants of the knapsack problem, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual-based algorithm can still be applied and parallel computing is still possible. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
+For the variants of the knapsack problem, simple algorithms like the greedy algorithm might not work, but the Lagrangian-dual-based algorithm can still be applied and parallel computing is still possible. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
 
 <img src="./imgs/Extension_1.png" width="400">
 
