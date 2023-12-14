@@ -24,13 +24,13 @@ The knapsack problem
 
 is known as NP-hard. Some existing algorithms include:
 
-* **Dynamic programming** - Exact algorithm, pseudo-polynomial time $O(nW)$. Note that this dynamic programming approach can only be applied when all parameters are interger, which is not suitable for some cases.
+* **Dynamic programming** - Exact algorithm, pseudo-polynomial time $O(nW)$. Note that this dynamic programming approach can only be applied when all parameters are integer, which is not suitable for some cases.
 
 * **Branch-and-bound** - Exact algorithm, exponential time $O(2^n)$. This method can obtain the optimal result, but it is extremely slow.
 
 * **Greedy algorithm without sorting** - Approximate algorithm, just put the items one by one until the space is full. The time complexity is $O(n)$. This method is very fast, but the total values obtained are not satisfactory.
 
-* **Greedy algorithm with sorting** - Approximate algorithm, firstly sort the items according to their ratios of values to weights, then greedly choose the items with higher ratios. The time complexity is $O(n \log n)$. This method seems satisfactory for large-scale problem, but I will show that it is still very slow when $n$ is more than 1 million.
+* **Greedy algorithm with sorting** - Approximate algorithm, firstly sort the items according to their ratios of values to weights, then greedily choose the items with higher ratios. The time complexity is $O(n \log n)$. This method seems satisfactory for large-scale problems, but I will show that it is still very slow when $n$ is more than 1 million.
 
 In summary, when $n$ is very large, the above algorithms have a bad performance. Some new algorithms need to be developed. A desired algorithm should satisfy:
 
@@ -64,7 +64,7 @@ From the pseudo-code, we can see that Lines 7 to 11 can be done in parallel, so 
 ## Implementation and Experiment Results
 
 In the experiment section, I have the following settings:
-- I try three different number of items, 1 million, 10 million, and 100 million;
+- I try three different numbers of items, 1 million, 10 million, and 100 million;
 - The weight and value of each item are randomly generated, taking values between 0 and 1. I try 3 different random seeds and report the average results of 3 repeated experiments;
 - The space limit $W = 0.1n$;
 - For Lagrangian-dual-based algorithm, I set $\alpha = \varepsilon = 0.0001$, and $T = 100$.
@@ -75,7 +75,7 @@ Firstly, I compare the greedy algorithm (with/without sorting) and our Lagrangia
 
 The codes are implemented in `knapsack_greedy_sorting.c`, `knapsack_greedy_nonsorting.c`, and `knapsack_lagrangian.c`. And `knapsack_baseline.sl` is the batch file that can reproduce our results (`results/knapsack_baseline.out`).
 
-The following table shows the total values obtained by different algorithms. Results show that the greedy algorithm without sorting cannot produce good solution, and our algorithm produces similar solution with the greedy algorithm with sorting process.
+The following table shows the total values obtained by different algorithms. Results show that the greedy algorithm without sorting cannot produce a good solution, and our algorithm produces a similar solution to the greedy algorithm with the sorting process.
 
 |                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
 |-----------------|--------------------------|-----------------------|-----------------------|
@@ -83,7 +83,7 @@ The following table shows the total values obtained by different algorithms. Res
 | n = 10,000,000  | 999642.28 ± 692.23       | 2576426.51 ± 341.62   | 2575599.66 ± 572.32   |
 | n = 100,000,000 | 9999590.06 ± 1943.42     | Memory exceeded       | 25755056.01 ± 1656.31 |
 
-The following table shows the running times of different algorithms. The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. Our algorithm can be run in reasonable time.
+The following table shows the running times of different algorithms. The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. Our algorithm can be run in a reasonable time.
 
 |                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
 |-----------------|--------------------------|-----------------------|-----------------------|
@@ -97,7 +97,7 @@ In summary, I have shown the advantage of our Lagrangian-dual-based algorithm, c
 
 For this part, I parallelize our Lagrangian-dual-based using MPI programming. The codes are implemented in `knapsack_mpi.c`. And `knapsack_mpi.sl` is the batch file that can reproduce our results. When submitting our batch job, I let the number of nodes be 2, and let the number of tasks per node be 4.
 
-The following table shows the running times of our Lagrangian-dual-based (via MPI), under different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
+The following table shows the running times of our Lagrangian-dual-based (via MPI), under the different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
 
 |                 | Num. Processes = 1 | Num. Processes = 2 | Num. Processes = 4 | Num. Processes = 8 |
 |-----------------|--------------------|--------------------|--------------------|--------------------|
@@ -105,7 +105,7 @@ The following table shows the running times of our Lagrangian-dual-based (via MP
 | n = 10,000,000  | 5.67 ± 0.11        | 3.18 ± 0.04        | 2.12 ± 0.04        | 2.14 ± 0.02        |
 | n = 100,000,000 | 41.59 ± 0.04       | 24.93 ± 0.03       | 19.63 ± 0.32       | 21.24 ± 0.44       |
 
-When I submitted the batch job again, two adjacent nodes were allocated this time, and the tendency becomes normal (`results/knapsack_mpi_v2.out`).
+When I submitted the batch job again, two adjacent nodes were allocated this time, and the tendency became normal (`results/knapsack_mpi_v2.out`).
 
 |                 | Num. Processes = 1 | Num. Processes = 2 | Num. Processes = 4 | Num. Processes = 8 |
 |-----------------|--------------------|--------------------|--------------------|--------------------|
@@ -115,11 +115,11 @@ When I submitted the batch job again, two adjacent nodes were allocated this tim
 
 ## Extensions
 
-For the following variants, simple algorithms like the greedily algorithm might not work, but our Lagrangian-dual-based algorithm can be still applied and parallel computing is still possible.
+For the following variants, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual-based algorithm can be still applied and parallel computing is still possible.
 
 ### Multiple-Choice Knapsack Problem (MCKP)
  
-The original knapsack problem can be generalized into many variants. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chose for each class:
+The original knapsack problem can be generalized into many variants. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
 
 <img src="./imgs/Extension_1.png" width="400">
 
@@ -131,14 +131,14 @@ And the **Multi-Dimensional Knapsack Problem (MDKP)**, where there is more than 
 
 ## Conclusion and Future Works
 
-- In this project, I implemented the Lagrangian-dual-based algorithm to solve large-scale knapsack problem, which has an advantage in terms of both running time and solution quality.
+- In this project, I implemented the Lagrangian-dual-based algorithm to solve large-scale knapsack problems, which has an advantage in terms of both running time and solution quality.
 - I parallelize the Lagrangian-dual-based algorithm using MPI. Results show that the parallelization can effectively reduce the running time.
 - I also solve the extensions of the knapsack problem, including MCKPs and MDKPs.
 
 For this project, some future works include:
 
 - Fine-tune the MPI implementation and further reduce the running time.
-- Investigate the OpenMP implementation as well as the MPI+OpenMP implementation. Actually, I have tried to implement these two techniques (see `unused/knapsack_openmp.c` and `unused/knapsack_hybrid.c`), but the results did not show any improvement, probably due to the high communication time among threads. It is intersting to further optimize the OpenMP code and increase the efficiency.
+- Investigate the OpenMP implementation as well as the MPI+OpenMP implementation. Actually, I have tried to implement these two techniques (see `unused/knapsack_openmp.c` and `unused/knapsack_hybrid.c`), but the results did not show any improvement, probably due to the high communication time among threads. It is interesting to further optimize the OpenMP code and increase the efficiency.
 
 ## Reference
 
