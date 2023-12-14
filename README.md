@@ -1,5 +1,7 @@
 # CSCI596-Final-Project: Solving Large-Scale Knapsack Problem via Lagrangian-Dual-Based Parallel Algorithms
 
+Anqi Yan, anqiyan@usc.edu
+
 ## Problem Description
 
 ![image](https://github.com/Tuzki2333/CSCI596-Final-Project/assets/66580690/c3ae05f3-095f-437d-80d1-d556ed6bca06)
