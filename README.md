@@ -53,7 +53,7 @@ Interestingly, this Lagrangian dual problem has a separable structure, which all
 - STEP 2: Given $\lambda$, solve the inner maximization problem which can be done in $O(n)$
 - STEP 3: Update the value of $\lambda$ according to the dual ascent method
 - Repeat STEP 2 and STEP 3 until converge
-- After obtaining the final value of $\lambda$, repeat STEP 2 again and obtain the final feasible solution to the original knapsack problem
+- After obtaining the final value of $\lambda$, repeat STEP 2 and obtain the final feasible solution to the original knapsack problem
 
 The detailed pseudo-code is written as follows:
 
