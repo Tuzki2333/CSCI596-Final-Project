@@ -64,7 +64,7 @@ From the pseudo-code, we can see that Lines 7 to 11 can be done in parallel, so 
 ## Implementation and Experiment Results
 
 In the experiment section, I have the following settings:
-- I try three different numbers of items, 1 million, 10 million, and 100 million;
+- I tried three different numbers of items, 1 million, 10 million, and 100 million;
 - The weight and value of each item are randomly generated, taking values between 0 and 1. I try 3 different random seeds and report the average results of 3 repeated experiments;
 - The space limit $W = 0.1n$;
 - For Lagrangian-dual-based algorithm, I set $\alpha = \varepsilon = 0.0001$, and $T = 100$.
@@ -97,7 +97,7 @@ In summary, I have shown the advantage of our Lagrangian-dual-based algorithm, c
 
 For this part, I parallelize our Lagrangian-dual-based using MPI programming. The codes are implemented in `knapsack_mpi.c`. And `knapsack_mpi.sl` is the batch file that can reproduce our results. When submitting our batch job, I let the number of nodes be 2, and let the number of tasks per node be 4.
 
-The following table shows the running times (in seconds) of our Lagrangian-dual-based algorithm via MPI, under the different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
+The following table shows the running times (in seconds) of our Lagrangian-dual-based algorithm via MPI, under a different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
 
 |                 | Num. Processes = 1 | Num. Processes = 2 | Num. Processes = 4 | Num. Processes = 8 |
 |-----------------|--------------------|--------------------|--------------------|--------------------|
@@ -124,7 +124,7 @@ When I submitted the batch job again, two adjacent nodes were allocated this tim
 
 ## Extensions
 
-For the variants of the knapsack problem, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual-based algorithm can be still applied and parallel computing is still possible. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
+For the variants of the knapsack problem, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual-based algorithm can still be applied and parallel computing is still possible. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
 
 <img src="./imgs/Extension_1.png" width="400">
 
@@ -141,7 +141,7 @@ When $k$ is very large (i.e., $k>>n$), the MCKP problem can be also solved using
 
 - In this project, I implemented the Lagrangian-dual-based algorithm to solve large-scale knapsack problems, which has an advantage in terms of both running time and solution quality.
 - I parallelize the Lagrangian-dual-based algorithm using MPI. Results show that the parallelization can effectively reduce the running time.
-- I also solve the extensions of the knapsack problem, including MCKPs and MDKPs.
+- I also solve an extension of the knapsack problem, the Multiple-Choice Knapsack Problem (MCKP).
 
 For this project, some possible future works include:
 
