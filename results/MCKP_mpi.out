@@ -1,0 +1,197 @@
+==========================================
+SLURM_JOB_ID = 18154731
+SLURM_JOB_NODELIST = e11-[26-27]
+TMPDIR = /tmp/SLURM_18154731
+==========================================
+The number of processes: 1
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345773.890000
+Execution time (s): 3.010000
+
+The number of processes: 2
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345773.890000
+Execution time (s): 2.240000
+
+The number of processes: 4
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345773.890000
+Execution time (s): 2.100000
+
+The number of processes: 8
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345773.890000
+Execution time (s): 1.340000
+
+The number of processes: 1
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345313.250000
+Execution time (s): 3.010000
+
+The number of processes: 2
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345313.250000
+Execution time (s): 2.160000
+
+The number of processes: 4
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345313.250000
+Execution time (s): 1.980000
+
+The number of processes: 8
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 345313.250000
+Execution time (s): 1.260000
+
+The number of processes: 1
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 346051.370000
+Execution time (s): 2.810000
+
+The number of processes: 2
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 346051.370000
+Execution time (s): 2.040000
+
+The number of processes: 4
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 100000.000000
+Total values obtained: 346051.370000
+Execution time (s): 1.900000
+
+The number of processes: 8
+The number of classes: 1000000
+The number of items in each class: 2
+The space limit: 100000
+Final space used: 99544.460000
+Total values obtained: 346088.380000
+Execution time (s): 1.220000
+
+The number of processes: 1
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 999999.990008
+Total values obtained: 3460842.590012
+Execution time (s): 25.320000
+
+The number of processes: 2
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 999999.990008
+Total values obtained: 3460842.590012
+Execution time (s): 21.950000
+
+The number of processes: 4
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 999999.990008
+Total values obtained: 3460842.590012
+Execution time (s): 19.670000
+
+The number of processes: 8
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 999999.990008
+Total values obtained: 3460842.590012
+Execution time (s): 12.460000
+
+The number of processes: 1
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996915.760008
+Total values obtained: 3463095.990011
+Execution time (s): 27.690000
+
+The number of processes: 2
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996915.760008
+Total values obtained: 3463095.990011
+Execution time (s): 20.260000
+
+The number of processes: 4
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996915.760008
+Total values obtained: 3463095.990011
+Execution time (s): 20.850000
+
+The number of processes: 8
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996915.760008
+Total values obtained: 3463095.990011
+Execution time (s): 12.690000
+
+The number of processes: 1
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996080.950008
+Total values obtained: 3463007.580011
+Execution time (s): 25.180000
+
+The number of processes: 2
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996080.950008
+Total values obtained: 3463007.580011
+Execution time (s): 21.690000
+
+The number of processes: 4
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996080.950008
+Total values obtained: 3463007.580011
+Execution time (s): 19.690000
+
+The number of processes: 8
+The number of classes: 10000000
+The number of items in each class: 2
+The space limit: 1000000
+Final space used: 996080.950008
+Total values obtained: 3463007.580011
+Execution time (s): 12.350000
+

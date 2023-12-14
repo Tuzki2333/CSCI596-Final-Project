@@ -83,7 +83,7 @@ The following table shows the total values obtained by different algorithms. Res
 | n = 10,000,000  | 999642.28 ± 692.23       | 2576426.51 ± 341.62   | 2575599.66 ± 572.32   |
 | n = 100,000,000 | 9999590.06 ± 1943.42     | Memory exceeded       | 25755056.01 ± 1656.31 |
 
-The following table shows the running times of different algorithms. The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. Our algorithm can be run in a reasonable time.
+The following table shows the running times of different algorithms (in seconds). The greedy algorithm without sorting is indeed very quick, while the greedy algorithm with sorting is relatively slow and cannot run when $n$ is 100 million. Our algorithm can be run in a reasonable time.
 
 |                 | Greedy (without sorting) | Greedy (with sorting) | Lagrangian-dual-based |
 |-----------------|--------------------------|-----------------------|-----------------------|
@@ -97,13 +97,22 @@ In summary, I have shown the advantage of our Lagrangian-dual-based algorithm, c
 
 For this part, I parallelize our Lagrangian-dual-based using MPI programming. The codes are implemented in `knapsack_mpi.c`. And `knapsack_mpi.sl` is the batch file that can reproduce our results. When submitting our batch job, I let the number of nodes be 2, and let the number of tasks per node be 4.
 
-The following table shows the running times of our Lagrangian-dual-based (via MPI), under the different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
+The following table shows the running times (in seconds) of our Lagrangian-dual-based algorithm via MPI, under the different number of processes (`results/knapsack_mpi_v1.out`). The results show that it is beneficial to use MPI to parallelize our algorithm. However, it is strange that when the number of processes is 8, the running time will be slightly larger than when the number of processes is 4. The possible reason is the interference of different jobs and nodes.
 
 |                 | Num. Processes = 1 | Num. Processes = 2 | Num. Processes = 4 | Num. Processes = 8 |
 |-----------------|--------------------|--------------------|--------------------|--------------------|
 | n = 1,000,000   | 0.84 ± 0           | 0.47 ± 0.01        | 0.29 ± 0.01        | 0.29 ± 0.01        |
 | n = 10,000,000  | 5.67 ± 0.11        | 3.18 ± 0.04        | 2.12 ± 0.04        | 2.14 ± 0.02        |
 | n = 100,000,000 | 41.59 ± 0.04       | 24.93 ± 0.03       | 19.63 ± 0.32       | 21.24 ± 0.44       |
+
+
+And the timing results are plotted as follows:
+
+<img src="./imgs/Timing_results.png" width="500">
+
+The fixed problem-size efficiency is plotted as follows:
+
+<img src="./imgs/Efficiency_results.png" width="500">
 
 When I submitted the batch job again, two adjacent nodes were allocated this time, and the tendency became normal (`results/knapsack_mpi_v2.out`).
 
@@ -115,19 +124,18 @@ When I submitted the batch job again, two adjacent nodes were allocated this tim
 
 ## Extensions
 
-For the following variants, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual-based algorithm can be still applied and parallel computing is still possible.
-
-### Multiple-Choice Knapsack Problem (MCKP)
- 
-The original knapsack problem can be generalized into many variants. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
+For the variants of the knapsack problem, simple algorithms like the greedy algorithm might not work, but our Lagrangian-dual-based algorithm can be still applied and parallel computing is still possible. For example, the **Multiple-Choice Knapsack Problem (MCKP)**, where items are categorized into $k$ different classes and only one item can be chosen for each class:
 
 <img src="./imgs/Extension_1.png" width="400">
 
-### Multi-Dimensional Knapsack Problem (MDKP)
+When $k$ is very large (i.e., $k>>n$), the MCKP problem can be also solved using MPI. I let $k$ be 1 million and 10 million, and let all values of $n$ be 2. The codes are in `MCKP_mpi.c` and the batch file is `MCKP_mpi.sl`. The running time results are (in seconds):
 
-And the **Multi-Dimensional Knapsack Problem (MDKP)**, where there is more than one constraint:
+|                 | Num. Processes = 1 | Num. Processes = 2 | Num. Processes = 4 | Num. Processes = 8 |
+|-----------------|--------------------|--------------------|--------------------|--------------------|
+| n = 1,000,000   | 2.94 ± 0.12        | 2.15 ± 0.10        | 1.99 ± 0.10        | 1.27 ± 0.06        |
+| n = 10,000,000  | 26.06 ± 1.41       | 21.30 ± 0.91       | 20.07 ± 0.68       | 12.50 ± 0.17       |
 
-<img src="./imgs/Extension_2.png" width="350">
+<img src="./imgs/Efficiency_results_2.png" width="500">
 
 ## Conclusion and Future Works
 
@@ -135,11 +143,13 @@ And the **Multi-Dimensional Knapsack Problem (MDKP)**, where there is more than 
 - I parallelize the Lagrangian-dual-based algorithm using MPI. Results show that the parallelization can effectively reduce the running time.
 - I also solve the extensions of the knapsack problem, including MCKPs and MDKPs.
 
-For this project, some future works include:
+For this project, some possible future works include:
 
 - Fine-tune the MPI implementation and further reduce the running time.
 - Investigate the OpenMP implementation as well as the MPI+OpenMP implementation. Actually, I have tried to implement these two techniques (see `unused/knapsack_openmp.c` and `unused/knapsack_hybrid.c`), but the results did not show any improvement, probably due to the high communication time among threads. It is interesting to further optimize the OpenMP code and increase the efficiency.
 
 ## Reference
+
+The high-level idea of this project comes from the following paper:
 
 Zhang, X., Qi, F., Hua, Z., & Yang, S. (2020, April). Solving billion-scale knapsack problems. In Proceedings of The Web Conference 2020 (pp. 3105-3111).
