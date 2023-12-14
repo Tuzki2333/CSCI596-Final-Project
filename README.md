@@ -112,7 +112,7 @@ And the timing results are plotted as follows:
 
 The fixed problem-size efficiency is plotted as follows:
 
-<img src="./imgs/Efficiency_results.png" width="500">
+<img src="./imgs/Efficiency_results_1.png" width="500">
 
 When I submitted the batch job again, two adjacent nodes were allocated this time, and the tendency became normal (`results/knapsack_mpi_v2.out`).
 
@@ -134,6 +134,8 @@ When $k$ is very large (i.e., $k>>n$), the MCKP problem can be also solved using
 |-----------------|--------------------|--------------------|--------------------|--------------------|
 | n = 1,000,000   | 2.94 ± 0.12        | 2.15 ± 0.10        | 1.99 ± 0.10        | 1.27 ± 0.06        |
 | n = 10,000,000  | 26.06 ± 1.41       | 21.30 ± 0.91       | 20.07 ± 0.68       | 12.50 ± 0.17       |
+
+Also, the fixed problem-size efficiency is plotted as follows:
 
 <img src="./imgs/Efficiency_results_2.png" width="500">
 
